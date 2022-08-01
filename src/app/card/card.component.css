@@ -1,0 +1,16 @@
+.zoom{
+        background-color:grey;
+        /* margin-left:40px; */
+        transition: transform .2s;
+        box-shadow: 10px 10px 5px lightblue;
+        border-radius: 20px;
+        
+}
+
+.zoom:hover {
+        -ms-transform: scale(1.5); /* IE 9 */
+        -webkit-transform: scale(1.5); /* Safari 3-8 */
+        transform: scale(1.1); 
+      }
+
+ 

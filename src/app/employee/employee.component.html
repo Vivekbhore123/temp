@@ -1,0 +1,102 @@
+<hr>
+<hr>
+<hr>
+<hr>
+  <input value="title" />
+  ajax
+  <br>
+  <br>
+ 
+<hr>
+ <input id="test" type="test" [(ngModel)]="title" value="Rajesh" class="" />
+ <br>
+you entered {{title}}
+
+
+<hr>
+ <input type="button" on-click="testing()" value="Submit(on-click)" class="btn btn-danger" /> = name = {{firstName}}
+ <br>
+ <br>
+ <br>
+ <input type="button" (click)="testing()" value="Submit((click))" class="btn btn-danger" />
+ <br>
+employeehtml
+<br>
+<br>
+<br>
+<br>
+<br>
+<table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Age</th>
+            <th scope="col">Pin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>{{firstName}}</td>
+            <td>{{gender}}</td>
+            <td>{{age}}</td>
+            <td>{{pin}}</td>
+          </tr>
+         
+         
+        </tbody>
+      </table>
+
+      <dept></dept>
+
+
+      <hr>
+      <hr>
+      <hr>
+      <hr>
+     <h1>show table and hide table assignment</h1>
+
+      <input type="button" id="hideandseek" on-click="hideandshowtable()" class="btn btn-success" value="{{tableEmp ? 'hide table':'show table'}}" />
+
+
+     <div *ngIf="tableEmp==true">
+      <empCount [allCount]=getAllCount()
+      [maleCount]=getAllMaleCount()
+      [femaleCount]=getAllFeMaleCount()
+      (rbSelection)=radioButtonSelectionCh($event)
+      ></empCount>
+      <table class="table">
+        <thead>
+          <tr>
+            
+            <th scope="col">Code</th>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Salary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- {{employees.map((obj)=>return )}} -->
+          <ng-container *ngFor='let emp of employees'>
+          <tr *ngIf='rbselect=="all" || emp.gender==rbselect'>
+
+            <th scope="row">{{emp.code}}</th>
+            <td>{{emp.name | EmployeeTitle:emp.gender }}</td>
+            <td>{{emp.gender | uppercase}}</td>
+            <td>{{emp.salary}}</td>
+           
+          </tr>
+        </ng-container>
+          <tr *ngIf="employees.length==0">
+            
+            <td colspan="4">No employees record found</td>
+           
+           
+          </tr>
+         
+         
+        </tbody>
+      </table>
+     </div>

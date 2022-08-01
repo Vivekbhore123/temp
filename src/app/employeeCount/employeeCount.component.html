@@ -1,0 +1,19 @@
+<span>Show :</span>
+<!-- on-click="" -->
+
+<input type="radio" (change)="onRadioButtonSelectionChange()" [(ngModel)]="selectedRBValue" name="empOptions" value="all"  />{{'All ('+allCount+')'}}
+<input type="radio" (change)="onRadioButtonSelectionChange()" [(ngModel)]="selectedRBValue" name="empOptions" value="male" />{{'Male ('+maleCount+')'}}
+<input type="radio" (change)="onRadioButtonSelectionChange()" [(ngModel)]="selectedRBValue" name="empOptions" value="female"  />{{'Female ('+femaleCount+')'}}
+<br>
+<br>
+
+<!-- assignment wala part below -->
+<div>
+        <select name="empOptions" id="" (change)="onRadioButtonSelectionChange()" [(ngModel)]="selectedRBValue" >
+                <option value="all">{{'All ('+allCount+')'}}</option>
+                <option value="male">{{'Male ('+maleCount+')'}}</option>
+                <option value="female">{{'Female ('+femaleCount+')'}}</option>
+        </select>
+</div>
+
+ 
